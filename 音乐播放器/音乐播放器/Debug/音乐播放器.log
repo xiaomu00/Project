@@ -1,0 +1,21 @@
+﻿生成启动时间为 2020/7/24 星期五 13:25:47。
+     1>项目“E:\学习\比特\项目\小项目\音乐播放器\音乐播放器\音乐播放器.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\software\VS 2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\音乐播放器.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "音乐播放器.cpp" "音乐播放器Dlg.cpp"
+         音乐播放器Dlg.cpp
+         正在生成代码...
+         正在跳过...(未检测到相关更改)
+         音乐播放器.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /l"0x0804" /IDebug\ /nologo /fo"Debug\音乐播放器.res" "音乐播放器.rc" 
+       Link:
+         D:\software\VS 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\学习\比特\项目\小项目\音乐播放器\Debug\音乐播放器.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"D:\software\VS 2013\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"E:\学习\比特\项目\小项目\音乐播放器\Debug\音乐播放器.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\学习\比特\项目\小项目\音乐播放器\Debug\音乐播放器.lib" /MACHINE:X86 "Debug\音乐播放器.res"
+         Debug\stdafx.obj
+         "Debug\音乐播放器.obj"
+         "Debug\音乐播放器Dlg.obj"
+         音乐播放器.vcxproj -> E:\学习\比特\项目\小项目\音乐播放器\Debug\音乐播放器.exe
+     1>已完成生成项目“E:\学习\比特\项目\小项目\音乐播放器\音乐播放器\音乐播放器.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:04.82
