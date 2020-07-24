@@ -1,0 +1,14 @@
+﻿生成启动时间为 2020/7/23 星期四 9:31:43。
+     1>项目“E:\学习\比特\项目\小项目\网络聊天室\网络聊天室\网络聊天室.vcxproj”在节点 2 上(Build 个目标)。
+     1>Link:
+         D:\software\VS 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\学习\比特\项目\小项目\网络聊天室\Debug\网络聊天室.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"D:\software\VS 2013\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"E:\学习\比特\项目\小项目\网络聊天室\Debug\网络聊天室.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\学习\比特\项目\小项目\网络聊天室\Debug\网络聊天室.lib" /MACHINE:X86 "Debug\网络聊天室.res"
+         Debug\QQMessage.obj
+         Debug\stdafx.obj
+         "Debug\网络聊天室.obj"
+         "Debug\网络聊天室Dlg.obj"
+         网络聊天室.vcxproj -> E:\学习\比特\项目\小项目\网络聊天室\Debug\网络聊天室.exe
+     1>已完成生成项目“E:\学习\比特\项目\小项目\网络聊天室\网络聊天室\网络聊天室.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.94
