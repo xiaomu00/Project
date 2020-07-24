@@ -1,0 +1,36 @@
+﻿生成启动时间为 2020/7/11 星期六 22:52:38。
+     1>项目“E:\学习\比特\项目\小项目\机房预约系统\机房预约系统\机房预约系统.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\software\VS 2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Student.cpp
+         Student.cpp
+     1>e:\学习\比特\项目\小项目\机房预约系统\机房预约系统\student.cpp(127): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\学习\比特\项目\小项目\机房预约系统\机房预约系统\student.cpp(131): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 d:\software\vs 2013\vc\include\stdlib.h(937) : 参见“itoa”的声明
+     1>e:\学习\比特\项目\小项目\机房预约系统\机房预约系统\student.cpp(162): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\software\vs 2013\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>e:\学习\比特\项目\小项目\机房预约系统\机房预约系统\student.cpp(208): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 d:\software\vs 2013\vc\include\conio.h(131) : 参见“getch”的声明
+     1>e:\学习\比特\项目\小项目\机房预约系统\机房预约系统\student.cpp(236): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 d:\software\vs 2013\vc\include\conio.h(131) : 参见“getch”的声明
+     1>e:\学习\比特\项目\小项目\机房预约系统\机房预约系统\student.cpp(272): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 d:\software\vs 2013\vc\include\conio.h(131) : 参见“getch”的声明
+     1>e:\学习\比特\项目\小项目\机房预约系统\机房预约系统\student.cpp(310): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 d:\software\vs 2013\vc\include\conio.h(131) : 参见“getch”的声明
+     1>e:\学习\比特\项目\小项目\机房预约系统\机房预约系统\student.cpp(335): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\software\vs 2013\vc\include\string.h(112) : 参见“strcpy”的声明
+     1>e:\学习\比特\项目\小项目\机房预约系统\机房预约系统\student.cpp(341): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 d:\software\vs 2013\vc\include\conio.h(131) : 参见“getch”的声明
+     1>e:\学习\比特\项目\小项目\机房预约系统\机房预约系统\student.cpp(393): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _kbhit. See online help for details.
+                 d:\software\vs 2013\vc\include\conio.h(133) : 参见“kbhit”的声明
+       Link:
+         D:\software\VS 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\学习\比特\项目\小项目\机房预约系统\Debug\机房预约系统.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\学习\比特\项目\小项目\机房预约系统\Debug\机房预约系统.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\学习\比特\项目\小项目\机房预约系统\Debug\机房预约系统.lib" /MACHINE:X86 Debug\Administrator.obj
+         Debug\main.obj
+         Debug\Room_reservation.obj
+         Debug\Student.obj
+         Debug\Teacher.obj
+         机房预约系统.vcxproj -> E:\学习\比特\项目\小项目\机房预约系统\Debug\机房预约系统.exe
+     1>已完成生成项目“E:\学习\比特\项目\小项目\机房预约系统\机房预约系统\机房预约系统.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.18
