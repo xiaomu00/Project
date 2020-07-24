@@ -1,0 +1,48 @@
+﻿生成启动时间为 2020/7/24 星期五 16:23:57。
+     1>项目“C:\Users\Administrator\Desktop\Greedy _Snake\Greedy _Snake\Greedy _Snake.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\software\VS 2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "Greedy _Snake.cpp" main.cpp
+         main.cpp
+     1>c:\users\administrator\desktop\greedy _snake\greedy _snake\main.cpp(18): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 d:\software\vs 2013\vc\include\conio.h(131) : 参见“getch”的声明
+     1>c:\users\administrator\desktop\greedy _snake\greedy _snake\main.cpp(35): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _kbhit. See online help for details.
+                 d:\software\vs 2013\vc\include\conio.h(133) : 参见“kbhit”的声明
+     1>c:\users\administrator\desktop\greedy _snake\greedy _snake\main.cpp(58): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 d:\software\vs 2013\vc\include\conio.h(131) : 参见“getch”的声明
+     1>c:\users\administrator\desktop\greedy _snake\greedy _snake\main.cpp(76): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 d:\software\vs 2013\vc\include\conio.h(131) : 参见“getch”的声明
+     1>c:\users\administrator\desktop\greedy _snake\greedy _snake\main.cpp(85): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 d:\software\vs 2013\vc\include\conio.h(131) : 参见“getch”的声明
+     1>c:\users\administrator\desktop\greedy _snake\greedy _snake\main.cpp(107): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 d:\software\vs 2013\vc\include\conio.h(131) : 参见“getch”的声明
+         Greedy _Snake.cpp
+     1>c:\users\administrator\desktop\greedy _snake\greedy _snake\greedy _snake.cpp(189): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\software\vs 2013\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\greedy _snake\greedy _snake\greedy _snake.cpp(198): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\software\vs 2013\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\greedy _snake\greedy _snake\greedy _snake.cpp(348): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 d:\software\vs 2013\vc\include\conio.h(131) : 参见“getch”的声明
+     1>c:\users\administrator\desktop\greedy _snake\greedy _snake\greedy _snake.cpp(477): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\software\vs 2013\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\greedy _snake\greedy _snake\greedy _snake.cpp(483): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\software\vs 2013\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\greedy _snake\greedy _snake\greedy _snake.cpp(489): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\software\vs 2013\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\greedy _snake\greedy _snake\greedy _snake.cpp(495): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\software\vs 2013\vc\include\stdio.h(356) : 参见“sprintf”的声明
+     1>c:\users\administrator\desktop\greedy _snake\greedy _snake\greedy _snake.cpp(523): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\software\vs 2013\vc\include\stdio.h(211) : 参见“fopen”的声明
+     1>c:\users\administrator\desktop\greedy _snake\greedy _snake\greedy _snake.cpp(537): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\software\vs 2013\vc\include\stdio.h(211) : 参见“fopen”的声明
+     1>c:\users\administrator\desktop\greedy _snake\greedy _snake\greedy _snake.cpp(540): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 d:\software\vs 2013\vc\include\stdio.h(230) : 参见“fscanf”的声明
+         正在生成代码...
+       Link:
+         D:\software\VS 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Administrator\Desktop\Greedy _Snake\Debug\Greedy _Snake.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Administrator\Desktop\Greedy _Snake\Debug\Greedy _Snake.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Administrator\Desktop\Greedy _Snake\Debug\Greedy _Snake.lib" /MACHINE:X86 "Debug\Greedy _Snake.obj"
+         Debug\main.obj
+         Greedy _Snake.vcxproj -> C:\Users\Administrator\Desktop\Greedy _Snake\Debug\Greedy _Snake.exe
+     1>已完成生成项目“C:\Users\Administrator\Desktop\Greedy _Snake\Greedy _Snake\Greedy _Snake.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:03.25
