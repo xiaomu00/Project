@@ -75,6 +75,7 @@ SeqList<Type>:: SeqList(const SeqList<Type> &st)
 	memcpy(base, st.base, sizeof(Type)*(st._size + 1));
 	_size = st._size;
 }
+
 /////////////////////////////////////////////
 ////Îö¹¹
 template <typename Type>

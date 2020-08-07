@@ -24,16 +24,45 @@ void BigInt:: LoadDdata(int bit_size)
 {
 	srand(time(0));
 	for (int i = 0; i < bit_size; ++i)
-		_big.push_back(rand()%10);
+	{
+		int x = rand() % 10;
+		while (i == bit_size-1 && x==0)
+		{
+			int x = rand() % 10;
+		}
+		_big.push_back(x);
+	}
+		
 }
 
 /////////////////////////////////////////////
-////插入
+////尾部插入
 void BigInt::push_back(u_char x)
 {  _big.push_back(x);  }
 
 /////////////////////////////////////////////
-////插入
+////头部插入
+void BigInt::push_front(u_char x)
+{
+	_big.push_front(x);
+}
+
+/////////////////////////////////////////////
+////头部删除
+void BigInt::pop_front()
+{
+	_big.pop_front();
+}
+
+/////////////////////////////////////////////
+////尾部删除
+void BigInt::pop_back()
+{
+	_big.pop_back();
+}
+
+/////////////////////////////////////////////
+////大小
 size_t BigInt::size()const
 {  return _big.size();  }
 
@@ -42,6 +71,26 @@ size_t BigInt::size()const
 void BigInt::clear()
 {
 	_big.clear();
+}
+
+/////////////////////////////////////////////
+////求最后一位数
+u_char  BigInt:: back()const
+{
+	return _big.back();
+}
+/////////////////////////////////////////////
+////调整第一位的0
+void BigInt::clear_head_zero(BigInt& bt)
+{
+	if (bt == 0)
+		return;
+	while (bt.back() == 0)
+	{
+		bt.pop_back();
+		if (bt == 0)
+			return;
+	}
 }
 
 /////////////////////////////////////////////
@@ -195,17 +244,105 @@ void BigInt::Mul(BigInt &bt, const BigInt &bt1, const BigInt &bt2)
 		bt = 0;
 	else
 	{
-		BigInt tmp;
-		tmp.clear();
+		BigInt Mul_table[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 		for (u_long i = 1; i <= bt2.size(); ++i)
 		{
-			Mul_Item(tmp, bt1, bt2[i]);
-			MoveAdd(bt,tmp,i);
-			tmp.clear();
+			
+			if (bt2[i] != 0 && Mul_table[bt2[i]] == 0)
+			{
+				Mul_table[bt2[i]].clear();
+				Mul_Item(Mul_table[bt2[i]], bt1, bt2[i]);
+			}
+			MoveAdd(bt, Mul_table[bt2[i]], i);
 		}
 	}
 }
 
+/////////////////////////////////////////////
+////除法
+void BigInt:: Div(BigInt &bt, const BigInt &bt1, const BigInt &bt2)
+{
+	bt.clear();
+	if (bt1 < bt2)
+		bt = 0;
+	else if (bt1 == bt2)
+		bt = 1;
+	else
+	{
+		int len = bt1.size() - bt2.size();
+		BigInt tmp;
+		tmp.clear();
+
+		for (u_long i = 1; i <= bt2.size(); ++i)//给除数后面补0；使除数的长度等于被除数
+			tmp.push_back(bt1[i+len]);
+
+		while (len >= 0)
+		{
+			u_char div = 0;
+			while (tmp >= bt2)
+			{
+				tmp -= bt2;
+				div++;
+				clear_head_zero(tmp);
+			}
+			bt.push_front(div);
+			if (len > 0)
+			{
+				tmp.push_front(bt1[len]);
+				clear_head_zero(tmp);
+			}
+				
+			--len;
+		}
+		clear_head_zero(bt);////去除结果前面的0，方便显示
+	}
+}
+
+/////////////////////////////////////////////
+////取模
+void BigInt::Mod(BigInt &bt, const BigInt &bt1, const BigInt &bt2)
+{
+	bt.clear();
+	if (bt1 < bt2)
+		bt = bt1;
+	else if (bt1 == bt2)
+		bt = 0;
+	else
+	{
+		int len = bt1.size() - bt2.size();
+		BigInt tmp;
+		tmp.clear();
+
+		for (u_long i = 1; i <= bt2.size(); ++i)//给除数后面补0；使除数的长度等于被除数
+			tmp.push_back(bt1[i + len]);
+
+		while (len >= 0)
+		{
+			while (tmp >= bt2)
+			{
+				tmp -= bt2;
+				clear_head_zero(tmp);
+			}
+			if (len > 0)
+			{
+				tmp.push_front(bt1[len]);
+				clear_head_zero(tmp);
+			}
+			--len;
+		}
+		bt = tmp;
+		clear_head_zero(bt);////去除结果前面的0，方便显示
+	}
+}
+
+
+/////////////////////////////////////////////
+////平方 bt = bt1^2;
+
+void BigInt::Square(BigInt &bt, const BigInt &bt1)
+{
+	Mul(bt,bt1,bt1);
+}
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -227,6 +364,7 @@ u_char& BigInt::operator[](int pos)
 ////重载 <<
 ostream& operator<<(ostream& out, const BigInt &bt)
 {
+
 	for (u_long i = bt.size(); i>0; --i)
 		cout << (int)bt[i];
 	return out;
@@ -283,17 +421,48 @@ bool BigInt:: operator>=(const BigInt &bt)const
 
 
 /////////////////////////////////////////////
+////重载 >
+bool BigInt:: operator>(const BigInt &bt)const
+{
+	if (size() > bt.size())
+		return true;
+	else if (size() < bt.size())
+		return false;
+	else
+	{
+		for (u_long i = bt.size(); i > 0; --i)
+		{
+			if ((*this)[i] < bt[i])
+				return false;
+			else if ((*this)[i] > bt[i])
+				return true;
+		}
+		return false;
+	}
+}
+
+/////////////////////////////////////////////
+////重载 <=
+bool BigInt:: operator<=(const BigInt &bt)const
+{
+	return !(*this > bt);
+}
+
+/////////////////////////////////////////////
 ////重载 ++
 BigInt& BigInt::operator++()//前++
 {
 	BigInt tmp;
+	tmp.clear();
 	Add(tmp, *this, 1);
 	*this = tmp;
 	return *this;
 }
 BigInt BigInt::operator++(int)//后++
 {
+
 	BigInt tmp = *this;
+	tmp.clear();
     ++*this;
 	return tmp;
 }
@@ -303,6 +472,7 @@ BigInt BigInt::operator++(int)//后++
 BigInt& BigInt::operator--()//前--
 {
 	BigInt tmp;
+	tmp.clear();
 	Sub(tmp, *this, 1);
 	*this = tmp;
 	return *this;
@@ -310,6 +480,7 @@ BigInt& BigInt::operator--()//前--
 BigInt BigInt::operator--(int)//后--
 {
 	BigInt tmp = *this;
+	tmp.clear();
 	--*this;
 	return tmp;
 }
@@ -319,6 +490,7 @@ BigInt BigInt::operator--(int)//后--
 BigInt& BigInt::operator+=(const BigInt &bt)
 {
 	BigInt tmp;
+	tmp.clear();
 	Add(tmp, *this, bt);
 	*this = tmp;
 	return *this;
@@ -329,6 +501,7 @@ BigInt& BigInt::operator+=(const BigInt &bt)
 BigInt& BigInt::operator-=(const BigInt &bt)
 {
 	BigInt tmp;
+	tmp.clear();
 	Sub(tmp, *this, bt);
 	*this = tmp;
 	return *this;
@@ -339,7 +512,19 @@ BigInt& BigInt::operator-=(const BigInt &bt)
 BigInt& BigInt::operator*=(const BigInt &bt)
 {
 	BigInt tmp;
+	tmp.clear();
 	Mul(tmp, *this, bt);
+	*this = tmp;
+	return *this;
+}
+
+/////////////////////////////////////////////
+////重载 /=
+BigInt& BigInt::operator/=(const BigInt &bt)
+{
+	BigInt tmp;
+	tmp.clear();
+	Div(tmp, *this, bt);
 	*this = tmp;
 	return *this;
 }
@@ -350,6 +535,7 @@ BigInt& BigInt::operator*=(const BigInt &bt)
 BigInt BigInt::operator+(const BigInt &bt)
 {
 	BigInt tmp;
+	tmp.clear();
 	Add(tmp, *this, bt);
 	return tmp;
 }
@@ -359,6 +545,7 @@ BigInt BigInt::operator+(const BigInt &bt)
 BigInt  BigInt::operator-(const BigInt &bt)
 {
 	BigInt tmp;
+	tmp.clear();
 	Sub(tmp, *this, bt);
 	return tmp;
 }
@@ -368,6 +555,27 @@ BigInt  BigInt::operator-(const BigInt &bt)
 BigInt BigInt::operator*(const BigInt &bt)
 {
 	BigInt tmp;
+	tmp.clear();
 	Mul(tmp, *this, bt);
+	return tmp;
+}
+
+///////////////////////////////////////////
+////重载 除号 /
+BigInt BigInt::operator / (const BigInt &bt)
+{
+	BigInt tmp;
+	tmp.clear();
+	Div(tmp,*this, bt);
+	return tmp;
+}
+
+///////////////////////////////////////////
+////重载 %
+BigInt BigInt::operator % (const BigInt &bt)
+{
+	BigInt tmp;
+	tmp.clear();
+	Mod(tmp, *this, bt);
 	return tmp;
 }

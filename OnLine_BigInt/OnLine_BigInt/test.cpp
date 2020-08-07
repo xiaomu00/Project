@@ -10,32 +10,30 @@
 
 void Test_BigInt()
 {
-	BigInt bt, bt1, bt2; 
-	bt1.LoadDdata(20);
+	BigInt bt;
+	BigInt bt1, bt2;
+	//BigInt bt3(120),bt4(2);
+
+	bt1.LoadDdata(10);
 	cout << "bt1: " << bt1<<endl;
 
-	Sleep(1000);
-	bt2.LoadDdata(15);
-	cout << "bt2: " << bt2 << endl;
+	/*Sleep(1000);
+	bt2.LoadDdata(2);
+	cout << "bt2: " << bt2 << endl;*/
 
-	////BigInt::Add(bt,bt1, bt2);
+	//BigInt::Add(bt,bt1, bt2);
 	//BigInt::Sub(bt, bt1, bt2);
-	BigInt::Mul(bt, bt1, bt2);
-
+	//BigInt::Mul(bt, bt1, bt2);
+	//BigInt::Div(bt, bt1, bt2);
+	BigInt::Square(bt, bt1);
 
 
 	cout << "bt : " << bt << endl;
+	//cout << "bt1*bt2 : " << bt1*bt2 << endl;
 
-
-
-	//BigInt bt3(123);
-	//BigInt bt4(23);
-	//cout << "bt3 : " << bt3 << endl;
-	//cout << "bt4 : " << bt4 << endl;
-	//cout << "bt3-bt4 : " << bt3-bt4 << endl;
-	//cout << "bt3+bt4 : " << bt3+bt4 << endl;
-
-	//cout << "bt3*bt4 : " << bt3*bt4 << endl;
+	
+	//BigInt:: Square(bt, bt3);
+	//cout << "bt3/bt4 : " << bt << endl;
 	//bt3 *= bt4;
 	//cout << "bt3*=bt4 : " << bt3<< endl;
 	/*
