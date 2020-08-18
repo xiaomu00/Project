@@ -46,7 +46,7 @@
                        class FileUtil
                        {
                        public:
-                                static void Read(const string &name, const string *body);//从文件中读取数据
+                                static void Read(const string &name, string *body);//从文件中读取数据
 		static void Write(const string &name, const string &body);//向文件中写入数据
                        };
 
