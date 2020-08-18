@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>xiaomu计算器</title>
+    <style>
+   
+   *{
+    user-select: none;
+}
+body{
+    background: #68afe4;
+}
+#jisuanqi{
+    width: 800px;
+    height: 420px;
+    background: beige;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+
+    margin: 80px auto;
+}
+
+#kong{
+    width: 100%;
+    height: 1px;
+  
+}
+
+
+#anniu1{
+    width: 100%;
+    height: 100px;
+    
+    float: left;
+}
+
+#anniu1 li{
+    list-style-type:  none;
+}
+#anniu1 .an1{
+    width: 50px;
+    height: 50px;
+    background: #00ffeaab;
+    color: #024e61;
+
+    font-size: 20px;
+    margin: 5px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+}
+
+#anniu1 .an2{
+    margin: 5px;
+    width: 100px;
+    height: 50px;
+    background: #e64747d8;
+    font-size: 30px;
+
+    position: relative;
+    left: 20px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+}
+
+#anniu2{
+    width: 8%;
+    height: 250px;
+    
+    background: beige;
+
+    
+
+    float: left;
+    position: relative;
+    left: 720px;
+    top: -350px;
+}
+#anniu2 li{
+    list-style-type:  none;
+}
+
+#anniu2 .an{
+    width: 40px;
+    height: 40px;
+    background: #00d9ff;
+    color: #00422e;
+
+    font-size: 20px;
+    margin: 5px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 40px;
+    float: left;
+
+
+    position: relative;
+    left: -50px;
+    top: -10px;
+}
+
+#fasong{
+    margin: 5px;
+    width: 100px;
+    height: 50px;
+    background: #e64747d8;
+    font-size: 30px;
+
+    position: relative;
+    left: 20px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 60px;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+}
+
+#shujv{
+    width:80%;
+    height:250px;
+    left: 20px;
+   
+    position: relative;
+    left: 40px;
+
+}
+
+
+    </style>
+
+</head>
+<body>
+   
+        <form action="./BigIntCGI.cgi" METHOD="GET">
+            <div id="jisuanqi">
+                <div id="kong"> </div>   
+                <h3 align=center>xiaomu Big data computing</h3>                            
+                    <textarea id = "shujv" name="m"~></textarea>
+                    <div id="anniu1">
+                        <ul class="jianpan">
+                            <li class="an1" onclick="anjianshuru('1')">1</li>
+                            <li class="an1" onclick="anjianshuru('2')">2</li>
+                            <li class="an1" onclick="anjianshuru('3')">3</li>
+                            <li class="an1" onclick="anjianshuru('4')">4</li>
+                            <li class="an1" onclick="anjianshuru('5')">5</li>
+                            <li class="an1" onclick="anjianshuru('6')">6</li>
+                            <li class="an1" onclick="anjianshuru('7')">7</li>
+                            <li class="an1" onclick="anjianshuru('8')">8</li>
+                            <li class="an1" onclick="anjianshuru('9')">9</li>
+                            <li class="an1" onclick="anjianshuru('0')">0</li>
+                            <input id = "fasong" type="submit" value="=">
+                        </ul>
+                    </div>
+
+
+                    <div id="anniu2">
+                        <ul class="jianpan">
+                            <li class="an" onclick="anjianshuru('+')">+</li>
+                            <li class="an" onclick="anjianshuru('-')">-</li>
+                            <li class="an" onclick="anjianshuru('*')">*</li>
+                            <li class="an" onclick="anjianshuru('/')">÷</li>
+                            <li class="an" onclick="anjianshuru('%')">%</li>
+                        </ul>
+                    </div>
+
+                        
+                       
+                    <script>
+                        function anjianshuru(shuzi){
+                            var shuchu = document.getElementById('shujv').value;
+                            document.getElementById('shujv').value += shuzi;
+                        }
+                    </script>
+                    
+            </div>
+        </form>
+
+        
+       
+    
+</body>
+</html>
