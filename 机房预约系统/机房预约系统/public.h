@@ -10,7 +10,7 @@
 #include<string.h>
 #include<stdbool.h>
 #include<windows.h>//光标设置
-#include<time.h>//食物随机
+#include<time.h>
 #include<conio.h>//按键监控
 #include<graphics.h>//图形界面库
 //#include<mmsystem.h>//多媒体设备接口
