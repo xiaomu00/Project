@@ -27,9 +27,9 @@
         1、数据管理模块
                     管理指定目录下的文件信息（etag-最后一次修改时间，文件大小）
         2、目录监控模块
-                    检测目录下有哪些文件需要备份
-        3、文件备份模块
-                    搭建http客户端进行备份
+                    检测目录下有哪些文件需要备份，并搭建http客户端进行备份
+       
+                    
 
 
 三、代码模块介绍
@@ -169,15 +169,38 @@
          1、数据管理模块
                     管理指定目录下的文件信息（etag-最后一次修改时间，文件大小），管理两个数据，<文件名，文件etag信息>
 
+                    class DataManager{
+                    public:
+	                 DataManager(const string &filename) :_store_file(filename){}
+	                 bool Insert(const string &key, const string &val);//插入文件列表信息
+	                 bool GetEtag(const string &key, string*val);//通过文件名获取etag信息
+	                 bool lnitLoad();///初始化加载原有数据
+	                 bool Storage();//每次更新数据之后，持久化存储
+                    private:
+	                 string _store_file; //数据持久化存储路径/文件名
+	                 unordered_map<string, string> _backup_list;//文件列表信息
+                    };
+
 
          //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
         2、目录监控模块
                     读取目录下所有文件，每个文件都计算一下文件的etag信息，通过文件名到数据管理对象中查找原有etag信息，如果没有这个信息，则表示这是一个新文件，需要进                      行备份。如果有原有etag信息，则对新计算的etag和原有的etag进行比对，不相等则认为修改过，需要备份；否则不需要备份
+                    通过目录监控模块获取到需要备份的文件列表，搭建http客户端逐个上传文件即可上传完毕后，更新数据对象的etag信息。
+                    class CloudClient{
+                    public:
+	                 CloudClient(const string &filename, const string &store_file, const string srv_ip, uint16_t srv_port)
+	                 :_listen_dir(filename), data_manage(STORE_FILE), _srv_ip(srv_ip), _srv_port(srv_port){}
 
-
-         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        3、文件备份模块：
-                    通过目录监控模块获取到需要备份的文件列表，搭建http客户端逐个上传文件即可上传完毕后，更新数据对象的etag信息，这个模块是一个流程模块，在主控流程中就可以完成I这个模块中的网络通信，可以简单的通过httplib来搭建http客户端
+	                 bool GetBackUpFileList(vector<string> *list);//获取需要备份的文件列表---浏览目录下所有文件，逐个获取etag然后进行比对
+	                 bool GetEtag(const string &pathname, string *etag);//计算一个文件的etag信息
+	                 bool Start();//完成整体的文件备份流程
+                    private:
+	                 string _listen_dir; //监控模块要监控的目录名称   
+	                 DataManager data_manage;
+	                 string _srv_ip;
+	                 uint16_t _srv_port;
+                    };
+                    
 
 
 
